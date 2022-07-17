@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { ChangeEvent, ChangeEventHandler } from 'react';
 
-const useForm = (type) => {
+
+type PropType = 'default' | 'email' | false
+
+const useForm = (type : PropType) => {
   const [value, setValue] = React.useState('');
-  const [error, setError] = React.useState(null);
+  const [error, setError] = React.useState<null | string>(null);
 
   const types = {
     email: {
@@ -16,7 +19,7 @@ const useForm = (type) => {
     },
   };
 
-  function validate(value) {
+  function validate(value : string) {
     if (type === false) return true;
 
     if (value.length === 0) {
@@ -31,7 +34,7 @@ const useForm = (type) => {
     }
   }
 
-  function onChange({ target }) {
+  function onChange({ target }: ChangeEvent<HTMLInputElement>) {
     setError(null);
     error && validate(value);
     setValue(target.value);

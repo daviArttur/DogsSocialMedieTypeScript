@@ -9,7 +9,7 @@ type PropTypes = {
   value: string,
   onChange: ChangeEventHandler<HTMLInputElement>,
   onBlur: FocusEventHandler<HTMLInputElement>,
-  error: boolean | null
+  error: string | null
 }
 
 const Input = ({type, id, value, onChange, onBlur, error}: PropTypes) => {
