@@ -3,19 +3,15 @@ import React from 'react';
 // Styles
 import styles from'./Label.module.scss'
 
-// Prop-Types
-import PropTypes from 'prop-types';
+type PropType = {
+  forType: string,
+  children: string
+}
 
-const Label = ({ forType, children}) => {
+const Label = ({ forType, children}: PropType) => {
   return (
     <label className={styles.label} htmlFor={forType}>{ children }</label>
   )
 }
-
-Label.propTypes = {
-  forType: PropTypes.string,
-  children: PropTypes.string,
-}
-
 
 export default Label
