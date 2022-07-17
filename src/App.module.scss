@@ -1,0 +1,117 @@
+@import './Sass/VarsAndMixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  flex: 1;
+}
+
+body{
+  margin: 0;
+  color: $black-color;
+  font-family: $first-font;
+  padding-top: 4rem;
+}
+
+a, a:visited{
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p{
+  margin: 0;
+}
+
+ul,
+li{
+  list-style: none;
+  padding:0;
+  margin: 0;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  display: block;
+  font-size: 1rem;
+  font-family: $first-font;
+  color: $black-color;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft .3s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+.animeShow {
+  opacity: 0;
+  animation: animeShow .3s forwards;
+}
+
+@keyframes animeShow {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+.container {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.form {
+  margin-top: 20vh;
+  padding: 16px;
+}
+
+.title {
+  font-family: $second-font;
+  font-size: 3rem;
+  line-height: 1;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.title::after {
+  background: $second-color;
+  content: '';
+  border-radius: .2rem;
+  bottom: 5px;
+  left: -5px;
+  display: block;
+  height: 1.5rem;
+  position: absolute;
+  width: 1.5rem;
+  z-index: -1;
+}
+
+
+

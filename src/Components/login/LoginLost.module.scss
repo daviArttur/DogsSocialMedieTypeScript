@@ -1,0 +1,14 @@
+@import '../../Sass/VarsAndMixins.scss';
+
+.container {
+  display: flex;
+  flex-flow: column nowrap; 
+  justify-content: flex-start; 
+  margin-bottom: 10vh;
+  margin-top: 8rem;
+  max-width: 30rem;
+
+  input {
+    margin-bottom: 1rem;
+  }
+}

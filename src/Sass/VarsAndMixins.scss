@@ -1,0 +1,49 @@
+$first-font: Helvetica, Arial, sans-serif;
+$second-font: 'Spectral', serif, georgia;
+
+// colors
+
+$second-color: #fb1;
+$black-color: #333;
+$error-color: #f31;
+
+// media
+
+@mixin media($width) {
+  @if $width == mobile {
+    @media only screen and (max-width: 480px){
+      @content;
+    }
+  }
+
+  @else if $width == tablet {
+    @media only screen and (max-width: 900px){
+      @content;
+    }
+  }
+}
+
+// title
+
+.title {
+  font-family: $second-font;
+  font-size: 3rem;
+  line-height: 1;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.title::after {
+  background: $second-color;
+  content: '';
+  border-radius: .2rem;
+  bottom: 5px;
+  left: -5px;
+  display: block;
+  height: 1.5rem;
+  position: absolute;
+  width: 1.5rem;
+  z-index: -1;
+}
+

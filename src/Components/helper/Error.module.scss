@@ -1,0 +1,8 @@
+@import '../../Sass/VarsAndMixins.scss';
+
+.error {
+  color: $error-color;
+  display: block;
+  margin-top: 1rem;
+}
+

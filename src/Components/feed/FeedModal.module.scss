@@ -1,0 +1,155 @@
+@import '../.././Sass/VarsAndMixins.scss';
+
+.container {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+
+  @include media(mobile) {
+    overflow-y: auto;
+  }
+}
+
+.containerData {
+  animation: scaleUp 0.3s forwards;
+  background-color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 36rem;
+  width: 56rem;
+
+  @include media(tablet) {
+    flex-flow: column nowrap;
+    height: 36rem;
+    overflow-y: scroll;
+    margin: 0 calc(1rem + 15px) 0 1rem;
+    width: 40rem;
+  }
+
+  @include media(mobile) {
+    flex-flow: column nowrap;
+    height: auto;
+    margin: 0 1rem 0 1rem;
+    width: 56rem;
+  }
+}
+
+.containerInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  width: 95%;
+
+  @include media(tablet) {
+    width: 100%;
+  }
+
+  @include media(mobile) {
+    flex-flow: column nowrap;
+  }
+}
+
+.img {
+  width: 65%;
+  display: block;
+  object-fit: cover;
+
+  @include media(tablet) {
+    width: 100%;
+  }
+
+  @include media(mobile) {
+    flex-flow: column nowrap;
+  }
+}
+
+.userAndViews {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  width: 100%;
+  
+  p {
+    color: #333;
+  }
+}
+
+.authorAndViews {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: .5rem 0 1rem 0;
+  padding: 2rem 2rem 0;
+  width: 100%;
+}
+
+.nameDog {
+  align-items: flex-end;
+  display: flex;
+  justify-content: left;
+  margin: .5rem;
+  padding: 0 2rem;
+}
+
+.title {
+  margin: 0;
+}
+
+.bio {
+  display: flex;
+  padding: 1rem 2rem 2rem 2rem;
+
+  li {
+    border-left: 2px solid #333;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 1.5rem 0 .3rem;
+  }
+}
+
+.containerFlex {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  width: 35%;
+
+  @include media(tablet) {
+    width: 100%;
+  }
+
+  @include media(mobile) {
+    flex-flow: column nowrap;
+  }
+}
+
+.containerComment {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+
+  ul {
+    height: 70%;
+  }
+
+  form {
+    height: 30%;
+  }
+}
+
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}

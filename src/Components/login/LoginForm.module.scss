@@ -1,0 +1,44 @@
+@import '../../Sass/VarsAndMixins.scss';
+
+.cadastry {
+  margin: 4rem 0;
+  padding: 0 1rem;
+
+  p {
+    margin: 2rem 0;
+  }
+}
+
+.lost {
+  color: #666;
+  display: inline-block;
+  line-height: 1;
+  margin-left: 1rem;
+  padding: .5rem 0;
+
+  &::after {
+    background-color: #666;
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    
+  }
+}
+
+.subtitle {
+  font-family: $second-font;
+  line-height: 1;
+  font-size: 2rem;
+
+  &::after{
+    border-radius: 0.2rem;
+    content: '';
+    display: block;
+    background-color: #ddd;
+    height: 0.5rem;
+    width: 3rem;
+  }
+}
+
+

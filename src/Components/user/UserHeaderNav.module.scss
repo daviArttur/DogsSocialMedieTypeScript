@@ -1,0 +1,124 @@
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  a, button {
+    align-items: center;
+    background-color: #eee;
+    border: 1px solid transparent;
+    border-radius: .2rem;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    fill: #333;
+    justify-content: center;
+    transition: .1s;
+    width: 40px;
+  }
+
+  a:hover, a:focus, button:hover, button:focus {
+    background-color: #fff;
+    border-color: #333;
+    transition: .5s;
+  }
+
+  a:global(.active) {
+    background-color: #fff;
+    box-shadow: 0 0 0 3px #fea;
+    border-color: #fb1;
+  }
+
+  a:global(.active) svg > * {
+    fill: #fb1;
+  }
+
+  .buttonLogout {
+    margin: 0;
+  }
+}
+
+.button {
+  align-items: center;
+  background-color: #eee;
+  border: 1px solid transparent;
+  border-radius: .2rem;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  transition: .1s;
+  width: 40px;
+
+  &:after {
+    background-color: #333;
+    border-radius: 2px;
+    box-shadow: 0 6px currentColor, 0 -6px currentColor;
+    content: '';
+    height: 3px;
+    transition: .2s;
+    width: 20px;
+  }
+
+  &:focus, &:hover{
+    background-color: #fff;
+    box-shadow: 0 0 0 3px #fea;
+    border-color: #fb1;
+
+    &:after{
+      background-color: #fb1;
+      box-shadow: 0 6px #fb1, 0 -6px #fb1;
+    }
+  }
+}
+
+.mobile {
+  align-items: left;
+  background-color: #fff;
+  border-radius: .2rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+  display: none;
+  flex-flow: column nowrap;
+  justify-items: center;
+  padding: 0 20px;
+  position: absolute;
+  right: 0;
+  top: 70px;
+
+  a {
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: left;
+    padding: 5px 0;
+  }
+}
+
+.active {
+  &:after {
+    transform: rotate(90deg);
+    height: 5px;
+    margin: 2px;
+    transition: .2s;
+    width: 5px;
+
+    .mobile{
+      display: flex;
+    }
+  }
+}
+
+.buttonLogout {
+  align-items: center;
+  background-color: #fff;
+  border: 0;
+  display: flex;
+  justify-content: left;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.visible {
+  display: flex;
+}
+

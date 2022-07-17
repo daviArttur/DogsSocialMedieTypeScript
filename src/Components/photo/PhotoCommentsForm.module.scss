@@ -1,0 +1,43 @@
+@import '../../Sass/VarsAndMixins.scss';
+
+.textarea {
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-radius: .2rem;
+  display: block;
+  font-size: 1rem;
+  font-family: $first-font;
+  outline: none;
+  padding: .5rem;
+  transition: .2s;
+  width: 100%;
+
+  &:hover {
+    border-color: #fb1;
+  }
+}
+
+.button {
+  width: 20%;
+}
+
+.container {
+  align-self: flex-end;
+  align-items: center;
+  bottom: 1rem;
+  justify-self: flex-end;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+
+  button {
+    background-color: transparent;
+    border: none;
+
+    &:first-child :hover {
+      fill: bisque;
+    }
+  }
+}

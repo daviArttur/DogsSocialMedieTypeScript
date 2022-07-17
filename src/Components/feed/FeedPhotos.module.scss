@@ -1,0 +1,16 @@
+@import '../../Sass/VarsAndMixins.scss';
+
+.container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem 0;
+  justify-items: center;
+}
+
+@include media(mobile) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

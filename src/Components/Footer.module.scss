@@ -1,0 +1,16 @@
+@import '../Sass/VarsAndMixins.scss';
+
+
+.footer {
+  align-items: center;
+  background-color: $second-color;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 10rem;
+  justify-content: center;
+  width: 100%;
+
+  p {
+    margin-top: 1rem;
+  }
+}

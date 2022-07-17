@@ -1,0 +1,29 @@
+@import '../../Sass/VarsAndMixins.scss';
+@import '../.././App.module.scss';
+
+.input{
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-radius: .4rem;
+  display: block;
+  font-size: 1rem;
+  padding: .8rem;
+  transition: .2s;
+  width: 100%;
+
+  &:hover,
+  &:focus{
+    background: white;
+    border-color: #fb1;
+    box-shadow: 0 0 0 3px #fea;
+    outline: none;
+  }
+}
+
+.error{
+  opacity: 0;
+  animation: animeShow .3s forwards;
+  color: red;
+  font-size: .875rem;
+  margin-top: .25rem;
+}
