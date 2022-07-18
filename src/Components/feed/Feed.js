@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 // Styles
 import styles from '../../App.module.scss';
@@ -11,19 +11,18 @@ const Feed = ({ user }) => {
   const [photoSelect, setPhotoSelect] = React.useState(null);
   const [pages, setPages] = React.useState([1]);
   const [infinite, setInfinite] = React.useState(true);
-
+  const wait = useRef(false)
   React.useEffect(() => {
-    let wait = false;
 
     function handleScroll() {
       if (infinite) {
         const height =
           document.body.offsetHeight - document.documentElement.clientHeight;
         const scroll = window.scrollY;
-        if (scroll > height * 0.85 && !wait) {
-          wait = true;
+        if (scroll > height * 0.85 && !wait.current) {
+          wait.current = true;
           setPages(() => [...pages, pages.length + 1]);
-          setTimeout(() => (wait = false), 500);
+          setTimeout(() => (wait.current = false), 500);
         }
       }
     }
